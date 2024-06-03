@@ -1,7 +1,6 @@
 import 'package:exam2_at_flutterui/core/get_it.dart';
 import 'package:exam2_at_flutterui/view/people_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 TextEditingController username=TextEditingController();
@@ -14,11 +13,13 @@ class LogInScreen extends StatelessWidget {
     return Scaffold(
         body: Container(
           color: Colors.black,
+           width: 375,
+            height: 812,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-          Column(
+          const Column(
             children: [
               Text(
                 "RIIDE",
@@ -33,7 +34,7 @@ class LogInScreen extends StatelessWidget {
           ),
             SizedBox(width:340,height:48 ,child: buildTextField(username,"Username","Enter your email or username")),
             SizedBox(width:340,height:48 ,child: buildTextField(password,"password","Enter your password")),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
               Text("Remember me",style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.w600),),  
@@ -47,7 +48,7 @@ class LogInScreen extends StatelessWidget {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>PeopleScreen()));
                 }else{
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
+                    const SnackBar(
                       backgroundColor: Colors.red,
                       content: Text("Error")),
                   );
@@ -59,12 +60,12 @@ class LogInScreen extends StatelessWidget {
                 height: 50,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: Color(0xFF4CE5B1),
+                  color: const Color(0xFF4CE5B1),
                   borderRadius: BorderRadius.circular(15)
                 ),
-                child: Text("Sign up",style: TextStyle(color: Colors.white,fontSize: 11,fontWeight: FontWeight.w800),),)
+                child: const Text("Sign up",style: TextStyle(color: Colors.white,fontSize: 11,fontWeight: FontWeight.w800),),)
               ),
-               Row(
+               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
              children: [
               Text("Dont have an account? ",style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.w600),),  
@@ -82,9 +83,9 @@ Widget buildTextField(TextEditingController controller,String label,String hintT
       fillColor: Colors.black,
       filled: true,
       labelText:label,
-      labelStyle: TextStyle(color: Color(0xFFCDCDCD),fontSize: 9,fontWeight: FontWeight.w700),
+      labelStyle: const TextStyle(color:  Color(0xFFCDCDCD),fontSize: 9,fontWeight: FontWeight.w700),
       hintText: hintText,
-      hintStyle: TextStyle(color: Color(0xFF5F5F5F),fontSize: 12,fontWeight: FontWeight.w400),
+      hintStyle: const TextStyle(color: Color(0xFF5F5F5F),fontSize: 12,fontWeight: FontWeight.w400),
     ),
   );
 }

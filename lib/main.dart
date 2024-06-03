@@ -5,7 +5,7 @@ import 'package:exam2_at_flutterui/view/people_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  //setup();
+  setup();
   runApp(const MyApp());
 }
 PageController onBoardingContoller=PageController();
@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          //body:  OnboardingScreen(),
           body: PageView(
               controller: onBoardingContoller,
               physics: BouncingScrollPhysics(),
